@@ -23,7 +23,7 @@ export function About({ data }: { data: any }) {
   ];
 
   return (
-    <section id="about" className="py-24 relative z-10">
+    <section id="about" className="py-16 md:py-24 relative z-10 scroll-mt-20">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -76,7 +76,7 @@ export function About({ data }: { data: any }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass p-8 rounded-2xl hover:bg-white/10 dark:hover:bg-white/5 transition-colors group"
+              className="glass p-6 md:p-8 rounded-2xl hover:bg-white/10 dark:hover:bg-white/5 transition-colors group"
             >
               <div className="mb-6 p-4 rounded-xl bg-background/50 inline-block group-hover:scale-110 transition-transform">
                 {card.icon}

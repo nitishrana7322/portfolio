@@ -68,14 +68,14 @@ export function Hero({ data }: { data: any }) {
             {data?.greeting || "Hi, I'm"} <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500">{data?.name || "Nitish"}</span>
           </h1>
 
-          <div className="h-[40px] md:h-[60px] mb-6 flex justify-center items-center overflow-hidden">
+          <div className="min-h-[70px] md:h-[80px] mb-8 md:mb-12 flex justify-center items-center overflow-hidden">
             <motion.h2
               key={roleIndex}
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: -40, opacity: 0 }}
               transition={{ duration: 0.5, type: "spring", bounce: 0.4 }}
-              className="text-2xl md:text-4xl text-foreground/80 font-medium"
+              className="text-2xl md:text-4xl text-foreground/80 font-medium px-4"
             >
               Building digital experiences as a{" "}
               <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-secondary-500 to-accent-500">
@@ -84,11 +84,11 @@ export function Hero({ data }: { data: any }) {
             </motion.h2>
           </div>
 
-          <p className="text-lg md:text-xl text-foreground/60 mb-10 max-w-2xl mx-auto">
-            {data?.description || "I craft responsive, scalable, and visually stunning web applications with modern technologies. Let's turn your vision into reality."}
+          <p className="text-base md:text-xl text-foreground/60 mb-8 md:mb-12 max-w-2xl mx-auto px-4">
+            {data?.description || "Skilled in data analytics, using Python and visualization tools to extract insights and support data-driven decision making"}
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4 md:mt-0">
             <a href="#projects" className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-white bg-primary-600 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-primary-500 hover:shadow-[0_0_20px_rgba(124,58,237,0.5)]">
               <span className="relative z-10 flex items-center gap-2">
                 View My Work

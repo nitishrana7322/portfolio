@@ -21,7 +21,7 @@ export function Skills({ data }: { data: any[] }) {
   };
 
   return (
-    <section id="skills" className="py-24 relative z-10">
+    <section id="skills" className="py-16 md:py-24 relative z-10 scroll-mt-20">
       <div className="container mx-auto px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -51,7 +51,7 @@ export function Skills({ data }: { data: any[] }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.15 }}
-              className="glass p-8 rounded-2xl border border-white/5 relative overflow-hidden group"
+              className="glass p-6 md:p-8 rounded-2xl border border-white/5 relative overflow-hidden group"
             >
               <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110 duration-500">
                 {getIcon(idx)}
