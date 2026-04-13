@@ -9,7 +9,7 @@ import { getDirectImageUrl } from "@/lib/utils";
 
 export function Hero({ data }: { data: any }) {
   const [roleIndex, setRoleIndex] = useState(0);
-  const roles = data?.roles?.length ? data.roles : ["Developer"];
+  const roles = data?.roles?.length ? data.roles : ["Data Analyst"];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -31,20 +31,20 @@ export function Hero({ data }: { data: any }) {
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ 
+              transition={{
                 type: "spring",
                 stiffness: 260,
                 damping: 20,
-                delay: 0.1 
+                delay: 0.1
               }}
               className="relative mb-8"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full blur-2xl opacity-20 animate-pulse" />
               <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full p-1 bg-gradient-to-br from-primary-500 via-secondary-500 to-accent-500 shadow-2xl">
                 <div className="w-full h-full rounded-full overflow-hidden bg-background">
-                  <img 
-                    src={getDirectImageUrl(data.profileImage)} 
-                    alt={data.name || "Profile"} 
+                  <img
+                    src={getDirectImageUrl(data.profileImage)}
+                    alt={data.name || "Profile"}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                     onError={(e) => {
                       (e.target as HTMLImageElement).style.display = 'none';
@@ -63,11 +63,11 @@ export function Hero({ data }: { data: any }) {
           >
             Available for new opportunities
           </motion.div>
-          
+
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
-            {data?.greeting || "Hi, I'm"} <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500">{data?.name || "Nitesh"}</span>
+            {data?.greeting || "Hi, I'm"} <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500">{data?.name || "Nitish"}</span>
           </h1>
-          
+
           <div className="h-[40px] md:h-[60px] mb-6 flex justify-center items-center overflow-hidden">
             <motion.h2
               key={roleIndex}
@@ -83,11 +83,11 @@ export function Hero({ data }: { data: any }) {
               </span>
             </motion.h2>
           </div>
-          
+
           <p className="text-lg md:text-xl text-foreground/60 mb-10 max-w-2xl mx-auto">
             {data?.description || "I craft responsive, scalable, and visually stunning web applications with modern technologies. Let's turn your vision into reality."}
           </p>
-          
+
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#projects" className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-white bg-primary-600 rounded-full overflow-hidden transition-all duration-300 hover:scale-105 hover:bg-primary-500 hover:shadow-[0_0_20px_rgba(124,58,237,0.5)]">
               <span className="relative z-10 flex items-center gap-2">
@@ -96,10 +96,10 @@ export function Hero({ data }: { data: any }) {
               </span>
               <div className="absolute inset-0 h-full w-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[150%] group-hover:translate-x-[150%] transition-transform duration-1000 ease-in-out" />
             </a>
-            
-            <a 
-              href={getDirectImageUrl(data?.cvLink) || "#"} 
-              target="_blank" 
+
+            <a
+              href={getDirectImageUrl(data?.cvLink) || "#"}
+              target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-foreground bg-transparent border border-foreground/20 rounded-full transition-all duration-300 hover:bg-foreground/5 hover:border-foreground/30"
             >
@@ -111,9 +111,9 @@ export function Hero({ data }: { data: any }) {
           </div>
         </motion.div>
       </div>
-      
+
       {/* Scroll indicator */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}

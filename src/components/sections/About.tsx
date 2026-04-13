@@ -1,24 +1,24 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Zap, Layout } from "lucide-react";
+import { BarChart3, TrendingUp, Database } from "lucide-react";
 
 export function About({ data }: { data: any }) {
   const cards = [
     {
-      icon: <Layout className="text-primary-500" size={32} />,
-      title: "Frontend Development",
-      description: "Building responsive, accessible, and highly interactive user interfaces using React and Next.js."
+      icon: <BarChart3 className="text-primary-500" size={32} />,
+      title: "Data Visualization",
+      description: "Transforming complex datasets into intuitive, interactive dashboards and visual stories using tools like Power BI, Tableau, and D3.js."
     },
     {
-      icon: <Code2 className="text-secondary-500" size={32} />,
-      title: "Backend Development",
-      description: "Designing scalable robust APIs and database structures to power modern web applications."
+      icon: <TrendingUp className="text-secondary-500" size={32} />,
+      title: "Statistical Modeling",
+      description: "Applying advanced statistical techniques and machine learning models to identify patterns and predict future trends."
     },
     {
-      icon: <Zap className="text-accent-500" size={32} />,
-      title: "Performance Optimization",
-      description: "Ensuring applications fall within strict performance budgets and offer lightning-fast load times."
+      icon: <Database className="text-accent-500" size={32} />,
+      title: "Data Engineering & ETL",
+      description: "Designing and implementing robust data pipelines for efficient data extraction, transformation, and storage."
     }
   ];
 
@@ -38,7 +38,7 @@ export function About({ data }: { data: any }) {
             </span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full mb-8" />
-          
+
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 text-foreground/80 text-lg leading-relaxed">
               {data?.description && data.description.length > 0 ? (
@@ -46,15 +46,15 @@ export function About({ data }: { data: any }) {
                   <p key={i}>{p}</p>
                 ))
               ) : (
-                <p>Hello! I'm Nitesh, a passionate Full Stack Developer.</p>
+                <p>Hello! I'm Nitish, a passionate Data Analyst.</p>
               )}
             </div>
-            
+
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
               <div className="relative h-80 rounded-2xl glass p-8 flex items-center justify-center overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-                <motion.div 
+                <motion.div
                   className="w-32 h-32 rounded-full bg-gradient-to-tr from-primary-500 via-secondary-500 to-accent-500 flex items-center justify-center shadow-[0_0_40px_rgba(124,58,237,0.4)]"
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}

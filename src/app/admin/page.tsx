@@ -21,7 +21,7 @@ export default function AdminDashboard() {
         if (resData.success) {
           if (!resData.data) {
             setData({
-              hero: { greeting: "Hi, I'm", name: "Nitesh", roles: ["Full Stack Developer"], description: "", profileImage: "", cvLink: "" },
+              hero: { greeting: "Hi, I'm", name: "Nitish", roles: ["Data Analyst"], description: "", profileImage: "", cvLink: "" },
               about: { description: [] },
               projects: [],
               experiences: [],
@@ -99,7 +99,7 @@ export default function AdminDashboard() {
       <div className="glass p-8 rounded-2xl text-center space-y-4 max-w-md">
         <h2 className="text-2xl font-bold text-red-500">Error Loading Data</h2>
         <p className="text-foreground/60">{message}</p>
-        <button 
+        <button
           onClick={() => window.location.reload()}
           className="px-6 py-2 bg-primary-600 hover:bg-primary-500 rounded-lg transition-colors"
         >
@@ -117,15 +117,15 @@ export default function AdminDashboard() {
         </h1>
         <div className="flex gap-4 items-center">
           {message && <span className="text-green-500 text-sm font-medium">{message}</span>}
-          <button 
-            onClick={handleSave} 
+          <button
+            onClick={handleSave}
             disabled={saving}
             className="px-6 py-2 bg-primary-600 hover:bg-primary-500 text-white rounded-lg font-medium outline-none"
           >
             {saving ? "Saving..." : "Save Changes"}
           </button>
-          <button 
-            onClick={handleLogout} 
+          <button
+            onClick={handleLogout}
             className="px-6 py-2 border border-white/10 hover:bg-white/5 rounded-lg font-medium"
           >
             Logout
@@ -138,51 +138,51 @@ export default function AdminDashboard() {
           <h2 className="text-xl font-bold border-b border-white/10 pb-2">Hero Section</h2>
           <div>
             <label className="block text-sm mb-1">Greeting</label>
-            <input 
-              value={data.hero?.greeting || ""} 
-              onChange={e => setData({...data, hero: {...data.hero, greeting: e.target.value}})}
+            <input
+              value={data.hero?.greeting || ""}
+              onChange={e => setData({ ...data, hero: { ...data.hero, greeting: e.target.value } })}
               className="w-full bg-background border border-white/10 rounded px-3 py-2"
             />
           </div>
           <div>
             <label className="block text-sm mb-1">Name</label>
-            <input 
-              value={data.hero?.name || ""} 
-              onChange={e => setData({...data, hero: {...data.hero, name: e.target.value}})}
+            <input
+              value={data.hero?.name || ""}
+              onChange={e => setData({ ...data, hero: { ...data.hero, name: e.target.value } })}
               className="w-full bg-background border border-white/10 rounded px-3 py-2"
             />
           </div>
           <div>
             <label className="block text-sm mb-1">Description</label>
-            <textarea 
-              value={data.hero?.description || ""} 
-              onChange={e => setData({...data, hero: {...data.hero, description: e.target.value}})}
+            <textarea
+              value={data.hero?.description || ""}
+              onChange={e => setData({ ...data, hero: { ...data.hero, description: e.target.value } })}
               className="w-full bg-background border border-white/10 rounded px-3 py-2 h-24"
             />
           </div>
           <div>
             <label className="block text-sm mb-1">Profile Photo URL</label>
-            <input 
-              value={data.hero?.profileImage || ""} 
-              onChange={e => setData({...data, hero: {...data.hero, profileImage: e.target.value}})}
+            <input
+              value={data.hero?.profileImage || ""}
+              onChange={e => setData({ ...data, hero: { ...data.hero, profileImage: e.target.value } })}
               className="w-full bg-background border border-white/10 rounded px-3 py-2"
               placeholder="https://example.com/photo.jpg"
             />
           </div>
           <div>
             <label className="block text-sm mb-1">CV Download Link</label>
-            <input 
-              value={data.hero?.cvLink || ""} 
-              onChange={e => setData({...data, hero: {...data.hero, cvLink: e.target.value}})}
+            <input
+              value={data.hero?.cvLink || ""}
+              onChange={e => setData({ ...data, hero: { ...data.hero, cvLink: e.target.value } })}
               className="w-full bg-background border border-white/10 rounded px-3 py-2"
               placeholder="https://drive.google.com/your-cv-link"
             />
           </div>
           <div>
             <label className="block text-sm mb-1 text-foreground/60">Roles (Comma separated)</label>
-            <input 
-              value={(data.hero?.roles || []).join(", ")} 
-              onChange={e => setData({...data, hero: {...data.hero, roles: e.target.value.split(",")}})}
+            <input
+              value={(data.hero?.roles || []).join(", ")}
+              onChange={e => setData({ ...data, hero: { ...data.hero, roles: e.target.value.split(",") } })}
               className="w-full bg-background border border-white/10 rounded px-3 py-2"
             />
           </div>
@@ -192,9 +192,9 @@ export default function AdminDashboard() {
           <h2 className="text-xl font-bold border-b border-white/10 pb-2">About Section</h2>
           <div>
             <label className="block text-sm mb-1 text-foreground/60">Paragraphs (Separate by new lines)</label>
-            <textarea 
-              value={(data.about?.description || []).join("\n\n")} 
-              onChange={e => setData({...data, about: {...data.about, description: e.target.value.split("\n\n")}})}
+            <textarea
+              value={(data.about?.description || []).join("\n\n")}
+              onChange={e => setData({ ...data, about: { ...data.about, description: e.target.value.split("\n\n") } })}
               className="w-full bg-background border border-white/10 rounded px-3 py-2 h-64"
             />
           </div>
@@ -204,83 +204,83 @@ export default function AdminDashboard() {
       <div className="glass p-6 rounded-2xl space-y-6">
         <div className="flex justify-between items-center border-b border-white/10 pb-2">
           <h2 className="text-xl font-bold">Projects</h2>
-          <button 
-            onClick={() => setData({...data, projects: [...(data.projects || []), {title: "New Project", description: "", tech: [], github: "", live: "", image: ""}]})}
+          <button
+            onClick={() => setData({ ...data, projects: [...(data.projects || []), { title: "New Project", description: "", tech: [], github: "", live: "", image: "" }] })}
             className="text-primary-500 text-sm hover:underline"
           >
             + Add Project
           </button>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {(data.projects || []).map((project: any, i: number) => (
             <div key={i} className="border border-white/10 p-4 rounded-xl space-y-3 bg-background/30">
-              <input 
-                value={project.title} 
+              <input
+                value={project.title}
                 onChange={e => {
                   const newProj = [...data.projects];
                   newProj[i].title = e.target.value;
-                  setData({...data, projects: newProj});
+                  setData({ ...data, projects: newProj });
                 }}
                 placeholder="Title"
                 className="w-full bg-transparent border-b border-white/10 px-2 py-1 outline-none font-bold placeholder:font-normal"
               />
-              <textarea 
-                value={project.description} 
+              <textarea
+                value={project.description}
                 onChange={e => {
                   const newProj = [...data.projects];
                   newProj[i].description = e.target.value;
-                  setData({...data, projects: newProj});
+                  setData({ ...data, projects: newProj });
                 }}
                 placeholder="Description"
                 className="w-full bg-transparent border border-white/10 rounded px-2 py-1 text-sm h-20"
               />
-              <input 
-                value={(project.tech || []).join(", ")} 
+              <input
+                value={(project.tech || []).join(", ")}
                 onChange={e => {
                   const newProj = [...data.projects];
                   newProj[i].tech = e.target.value.split(",");
-                  setData({...data, projects: newProj});
+                  setData({ ...data, projects: newProj });
                 }}
                 placeholder="Tech Stack (comma separated)"
                 className="w-full bg-transparent text-sm border-b border-white/10 px-2 py-1 outline-none"
               />
               <div className="flex gap-2">
-                <input 
-                  value={project.github} 
+                <input
+                  value={project.github}
                   onChange={e => {
                     const newProj = [...data.projects];
                     newProj[i].github = e.target.value;
-                    setData({...data, projects: newProj});
+                    setData({ ...data, projects: newProj });
                   }}
                   placeholder="Github URL"
                   className="w-1/2 bg-transparent text-sm border-b border-white/10 px-2 py-1 outline-none"
                 />
-                <input 
-                  value={project.live} 
+                <input
+                  value={project.live}
                   onChange={e => {
                     const newProj = [...data.projects];
                     newProj[i].live = e.target.value;
-                    setData({...data, projects: newProj});
+                    setData({ ...data, projects: newProj });
                   }}
                   placeholder="Live URL"
                   className="w-1/2 bg-transparent text-sm border-b border-white/10 px-2 py-1 outline-none"
                 />
               </div>
-              <input 
-                value={project.image} 
+              <input
+                value={project.image}
                 onChange={e => {
                   const newProj = [...data.projects];
                   newProj[i].image = e.target.value;
-                  setData({...data, projects: newProj});
+                  setData({ ...data, projects: newProj });
                 }}
                 placeholder="Image Drive URL or Gradient"
                 className="w-full bg-transparent text-sm border-b border-white/10 px-2 py-1 outline-none"
               />
-              <button 
+              <button
                 onClick={() => {
                   const newProj = data.projects.filter((_: any, idx: number) => idx !== i);
-                  setData({...data, projects: newProj});
+                  setData({ ...data, projects: newProj });
                 }}
                 className="text-red-500 text-xs w-full text-left hover:underline pt-2"
               >
@@ -294,8 +294,8 @@ export default function AdminDashboard() {
       <div className="glass p-6 rounded-2xl space-y-6">
         <div className="flex justify-between items-center border-b border-white/10 pb-2">
           <h2 className="text-xl font-bold">Experiences</h2>
-          <button 
-            onClick={() => setData({...data, experiences: [...(data.experiences || []), {role: "New Role", company: "", date: "", description: ""}]})}
+          <button
+            onClick={() => setData({ ...data, experiences: [...(data.experiences || []), { role: "New Role", company: "", date: "", description: "" }] })}
             className="text-primary-500 text-sm hover:underline"
           >
             + Add Experience
@@ -304,12 +304,12 @@ export default function AdminDashboard() {
         <div className="grid md:grid-cols-2 gap-4">
           {(data.experiences || []).map((exp: any, i: number) => (
             <div key={i} className="border border-white/10 p-4 rounded-xl space-y-3 bg-background/30">
-              <input value={exp.role} onChange={e => { const newExp = [...data.experiences]; newExp[i].role = e.target.value; setData({...data, experiences: newExp}); }} placeholder="Role" className="w-full bg-transparent border-b border-white/10 px-2 py-1 outline-none font-bold placeholder:font-normal" />
-              <input value={exp.company} onChange={e => { const newExp = [...data.experiences]; newExp[i].company = e.target.value; setData({...data, experiences: newExp}); }} placeholder="Company" className="w-full bg-transparent text-sm border-b border-white/10 px-2 py-1 outline-none" />
-              <input value={exp.date} onChange={e => { const newExp = [...data.experiences]; newExp[i].date = e.target.value; setData({...data, experiences: newExp}); }} placeholder="Date (e.g. Jan 2023 - Present)" className="w-full bg-transparent text-sm border-b border-white/10 px-2 py-1 outline-none" />
-              <textarea value={exp.description} onChange={e => { const newExp = [...data.experiences]; newExp[i].description = e.target.value; setData({...data, experiences: newExp}); }} placeholder="Description" className="w-full bg-transparent border border-white/10 rounded px-2 py-1 text-sm h-20" />
-              <button 
-                onClick={() => { const newExp = data.experiences.filter((_: any, idx: number) => idx !== i); setData({...data, experiences: newExp}); }}
+              <input value={exp.role} onChange={e => { const newExp = [...data.experiences]; newExp[i].role = e.target.value; setData({ ...data, experiences: newExp }); }} placeholder="Role" className="w-full bg-transparent border-b border-white/10 px-2 py-1 outline-none font-bold placeholder:font-normal" />
+              <input value={exp.company} onChange={e => { const newExp = [...data.experiences]; newExp[i].company = e.target.value; setData({ ...data, experiences: newExp }); }} placeholder="Company" className="w-full bg-transparent text-sm border-b border-white/10 px-2 py-1 outline-none" />
+              <input value={exp.date} onChange={e => { const newExp = [...data.experiences]; newExp[i].date = e.target.value; setData({ ...data, experiences: newExp }); }} placeholder="Date (e.g. Jan 2023 - Present)" className="w-full bg-transparent text-sm border-b border-white/10 px-2 py-1 outline-none" />
+              <textarea value={exp.description} onChange={e => { const newExp = [...data.experiences]; newExp[i].description = e.target.value; setData({ ...data, experiences: newExp }); }} placeholder="Description" className="w-full bg-transparent border border-white/10 rounded px-2 py-1 text-sm h-20" />
+              <button
+                onClick={() => { const newExp = data.experiences.filter((_: any, idx: number) => idx !== i); setData({ ...data, experiences: newExp }); }}
                 className="text-red-500 text-xs hover:underline block pt-2"
               >Remove</button>
             </div>
@@ -320,8 +320,8 @@ export default function AdminDashboard() {
       <div className="glass p-6 rounded-2xl space-y-6">
         <div className="flex justify-between items-center border-b border-white/10 pb-2">
           <h2 className="text-xl font-bold">Skills Categories</h2>
-          <button 
-            onClick={() => setData({...data, skills: [...(data.skills || []), {title: "New Category", skills: []}]})}
+          <button
+            onClick={() => setData({ ...data, skills: [...(data.skills || []), { title: "New Category", skills: [] }] })}
             className="text-primary-500 text-sm hover:underline"
           >
             + Add Category
@@ -330,10 +330,10 @@ export default function AdminDashboard() {
         <div className="grid md:grid-cols-2 gap-4">
           {(data.skills || []).map((skillCat: any, i: number) => (
             <div key={i} className="border border-white/10 p-4 rounded-xl space-y-3 bg-background/30">
-              <input value={skillCat.title} onChange={e => { const newSkill = [...data.skills]; newSkill[i].title = e.target.value; setData({...data, skills: newSkill}); }} placeholder="Category Title" className="w-full bg-transparent border-b border-white/10 px-2 py-1 outline-none font-bold" />
-              <textarea value={(skillCat.skills || []).join(", ")} onChange={e => { const newSkill = [...data.skills]; newSkill[i].skills = e.target.value.split(","); setData({...data, skills: newSkill}); }} placeholder="Skills (comma separated)" className="w-full bg-transparent border border-white/10 rounded px-2 py-1 text-sm h-20" />
-              <button 
-                onClick={() => { const newSkill = data.skills.filter((_: any, idx: number) => idx !== i); setData({...data, skills: newSkill}); }}
+              <input value={skillCat.title} onChange={e => { const newSkill = [...data.skills]; newSkill[i].title = e.target.value; setData({ ...data, skills: newSkill }); }} placeholder="Category Title" className="w-full bg-transparent border-b border-white/10 px-2 py-1 outline-none font-bold" />
+              <textarea value={(skillCat.skills || []).join(", ")} onChange={e => { const newSkill = [...data.skills]; newSkill[i].skills = e.target.value.split(","); setData({ ...data, skills: newSkill }); }} placeholder="Skills (comma separated)" className="w-full bg-transparent border border-white/10 rounded px-2 py-1 text-sm h-20" />
+              <button
+                onClick={() => { const newSkill = data.skills.filter((_: any, idx: number) => idx !== i); setData({ ...data, skills: newSkill }); }}
                 className="text-red-500 text-xs hover:underline block pt-2"
               >Remove</button>
             </div>

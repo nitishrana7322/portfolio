@@ -45,7 +45,7 @@ export default async function Home() {
 
       <footer className="py-8 border-t border-white/10 mt-12 bg-background/50 backdrop-blur-md">
         <div className="container mx-auto px-6 text-center text-foreground/60">
-          <p>© {new Date().getFullYear()} {safeData.hero?.name || "Nitesh"}. Designed & Built with Next.js, Tailwind CSS & Framer Motion.</p>
+          <p>© {new Date().getFullYear()} {safeData.hero?.name || "Nitish"}. Designed & Built with Next.js, Tailwind CSS & Framer Motion.</p>
         </div>
       </footer>
     </>

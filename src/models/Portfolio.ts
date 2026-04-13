@@ -65,7 +65,7 @@ const SkillCategorySchema = new mongoose.Schema({
 const PortfolioSchema = new mongoose.Schema({
   hero: {
     greeting: { type: String, default: "Hi, I'm" },
-    name: { type: String, default: "Nitesh" },
+    name: { type: String, default: "Nitish" },
     roles: [{ type: String }],
     description: { type: String, default: "" },
     profileImage: { type: String, default: "" },

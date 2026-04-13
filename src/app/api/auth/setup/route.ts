@@ -12,7 +12,7 @@ export async function POST(req: Request) {
       console.error('Database connection failed during setup:', dbError);
       throw dbError;
     }
-    
+
     // Check if admin already exists
     const adminCount = await Admin.countDocuments();
     if (adminCount > 0) {
@@ -26,7 +26,7 @@ export async function POST(req: Request) {
     }
 
     const hashedPassword = await hashPassword(password);
-    
+
     await Admin.create({
       email,
       password: hashedPassword
@@ -38,23 +38,23 @@ export async function POST(req: Request) {
       await Portfolio.create({
         hero: {
           greeting: "Hi, I'm",
-          name: "Nitesh",
-          roles: ["Full Stack Developer", "UI/UX Enthusiast"],
-          description: "I craft responsive, scalable, and visually stunning web applications with modern technologies.",
+          name: "Nitish",
+          roles: ["Data Analyst", "Business Intelligence Expert"],
+          description: "I transform raw data into actionable insights through advanced statistical analysis and visualization.",
           profileImage: "",
           cvLink: ""
         },
         about: {
           description: [
-            "Hello! I'm Nitesh, a passionate Full Stack Developer focused on creating exceptional digital experiences.",
-            "I specialize in JavaScript/TypeScript ecosystems, particularly React, Next.js, and Node.js."
+            "Hello! I'm Nitish, a passionate Data Analyst focused on turning complex data into clear, actionable insights.",
+            "I specialize in Python, SQL, and various visualization tools like Power BI and Tableau."
           ]
         },
         projects: [
           {
-            title: "Modern SaaS Dashboard",
-            description: "A comprehensive analytics dashboard for SaaS businesses.",
-            tech: ["Next.js", "Tailwind CSS"],
+            title: "Customer Segmentation Analysis",
+            description: "An in-depth analysis of customer behavior to optimize marketing strategies.",
+            tech: ["Python", "K-Means Clustering", "Pandas"],
             github: "#",
             live: "#",
             image: "from-primary-500/20 to-blue-500/20"
@@ -62,16 +62,16 @@ export async function POST(req: Request) {
         ],
         experiences: [
           {
-            role: "Senior Developer",
+            role: "Senior Data Analyst",
             company: "Tech Innovators",
             date: "Jan 2023 - Present",
-            description: "Leading frontend development."
+            description: "Leading data-driven decision making."
           }
         ],
         skills: [
           {
-            title: "Frontend",
-            skills: ["React", "Next.js", "TypeScript"]
+            title: "Data Analysis",
+            skills: ["Python (Pandas, Numpy)", "SQL", "Statistical Modeling"]
           }
         ]
       });
