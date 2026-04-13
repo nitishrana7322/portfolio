@@ -13,19 +13,19 @@ export function Contact() {
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!formRef.current) return;
-    
+
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
     // Replace these keys with actual EmailJS keys from user
     emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formRef.current, 'YOUR_PUBLIC_KEY')
       .then((result) => {
-          console.log(result.text);
-          setSubmitStatus("success");
-          if(formRef.current) formRef.current.reset();
+        console.log(result.text);
+        setSubmitStatus("success");
+        if (formRef.current) formRef.current.reset();
       }, (error) => {
-          console.log(error.text);
-          setSubmitStatus("error");
+        console.log(error.text);
+        setSubmitStatus("error");
       })
       .finally(() => {
         setIsSubmitting(false);
@@ -55,7 +55,7 @@ export function Contact() {
         </motion.div>
 
         <div className="grid md:grid-cols-5 gap-12 items-start max-w-5xl mx-auto">
-          <motion.div 
+          <motion.div
             className="md:col-span-2 space-y-8"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -70,19 +70,19 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-foreground/50">Email</p>
-                  <a href="mailto:hello@example.com" className="font-medium hover:text-primary-500 transition-colors">hello@nitesh.dev</a>
+                  <a href="mailto:hello@example.com" className="font-medium hover:text-primary-500 transition-colors">nitishkupandit1122@gmail.com</a>
                 </div>
               </div>
-              
+
               <div className="pt-8 border-t border-white/10">
                 <p className="text-sm text-foreground/50 mb-4">Follow Me</p>
                 <div className="flex gap-4">
                   {[
-                    { icon: <MessageCircle size={20} />, href: "#" },
-                    { icon: <Globe size={20} />, href: "#" },
-                    { icon: <Mail size={20} />, href: "#" }
+                    { icon: <MessageCircle size={20} />, href: "https://wa.me/7322833259" },
+                    { icon: <Globe size={20} />, href: "https://github.com/nitishrana7322" },
+                    { icon: <Mail size={20} />, href: "https://github.com/nitishrana7322" }
                   ].map((social, idx) => (
-                    <a 
+                    <a
                       key={idx}
                       href={social.href}
                       className="w-10 h-10 rounded-full bg-background flex items-center justify-center hover:bg-primary-500 hover:text-white transition-all transform hover:scale-110 border border-white/5"
@@ -95,7 +95,7 @@ export function Contact() {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="md:col-span-3 glass p-8 md:p-10 rounded-2xl"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -106,8 +106,8 @@ export function Contact() {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium text-foreground/80">Your Name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
                     id="name"
                     name="user_name"
                     required
@@ -117,9 +117,9 @@ export function Contact() {
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium text-foreground/80">Your Email</label>
-                  <input 
-                    type="email" 
-                    id="email" 
+                  <input
+                    type="email"
+                    id="email"
                     name="user_email"
                     required
                     className="w-full px-4 py-3 rounded-xl bg-background/50 border border-white/10 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 outline-none transition-all text-foreground"
@@ -127,11 +127,11 @@ export function Contact() {
                   />
                 </div>
               </div>
-              
+
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium text-foreground/80">Message</label>
-                <textarea 
-                  id="message" 
+                <textarea
+                  id="message"
                   name="message"
                   required
                   rows={5}
@@ -139,9 +139,9 @@ export function Contact() {
                   placeholder="How can I help you?"
                 ></textarea>
               </div>
-              
-              <button 
-                type="submit" 
+
+              <button
+                type="submit"
                 disabled={isSubmitting}
                 className="w-full py-4 rounded-xl bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-500 hover:to-secondary-500 text-white font-medium flex items-center justify-center gap-2 transition-all transform hover:scale-[1.02] active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed"
               >
